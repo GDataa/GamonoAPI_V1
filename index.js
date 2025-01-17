@@ -10,8 +10,8 @@ const PORT = 3000;
 app.use(cors());
 
 // Configuração do Giphy API
-const GIPHY_API_KEY = process.env.GIPHY_API_KEY;
-const GIPHY_BASE_URL = 'https://api.giphy.com/v1/gifs';
+const GAMONO_KEY_GEN = process.env.GAMONO_KEY_GEN;
+const GAMONO_BASE_URL = 'https://api.giphy.com/v1/gifs';
 
 // Endpoint para buscar GIFs por categoria
 app.get('/:category', async (req, res) => {
@@ -20,9 +20,9 @@ app.get('/:category', async (req, res) => {
 
     try {
         // Faz a requisição à API do Giphy
-        const response = await axios.get(`${GIPHY_BASE_URL}/search`, {
+        const response = await axios.get(`${GAMONO_BASE_URL}/search`, {
             params: {
-                api_key: GIPHY_API_KEY,
+                api_key: GAMONO_KEY_GEN,
                 q: category, // Termo de busca
                 limit,
                 rating: 'pg', // Classificação do conteúdo
