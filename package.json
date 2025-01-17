@@ -1,18 +1,19 @@
 {
-  "name": "gamonoapi",
+  "name": "gamono-api",
   "version": "1.0.0",
-  "description": "Uma API para buscar GIFs do Giphy.",
+  "description": "Uma API simples para buscar GIFs do Giphy.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["api", "giphy", "gifs", "express"],
-  "author": "Seu Nome",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GDataa/GamonoAPI_V1.git"
+  },
+  "keywords": ["giphy", "gifs", "api", "javascript", "nodejs"],
+  "author": "GDataa",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.4.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "axios": "^1.4.0"
   }
 }
