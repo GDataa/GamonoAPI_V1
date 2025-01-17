@@ -59,21 +59,27 @@ Siga os passos abaixo para configurar o projeto:
 ### Exemplo de Requisição:
 
 ```javascript
-const api = require('gamonoapi');
+const GamonoAPI = require('gamono-api'); // Importe a biblioteca
 
-api.login('seu-usuario', 'sua-senha')
-  .then(response => {
-    console.log('Login realizado com sucesso:', response);
-  })
-  .catch(error => {
-    console.error('Erro ao realizar login:', error);
-  });
+// Instancie a API com a chave da API carregada do .env
+const gamonoapi = new GamonoAPI();
+
+// Função assíncrona para buscar GIFs
+(async () => {
+  try {
+    const gifs = await gamonoapi.search('cat', 5);
+    console.log(gifs); // Exibe os GIFs encontrados
+  } catch (error) {
+    console.error('Erro:', error.message); // Exibe qualquer erro
+  }
+})();
 ```
 
 ### Funções Disponíveis:
 
 | Função       | Descrição                     |
 |------------------|---------------------------------|
+| `search()`       | Busca GIFs por categoria.       |
 | `login()`        | Autentica um usuário.           |
 | `getData()`      | Retorna dados do cliente.       |
 | `updateInfo()`   | Atualiza informações do cliente.|
@@ -85,9 +91,8 @@ api.login('seu-usuario', 'sua-senha')
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```
-API_KEY=your_api_key_here
-API_SECRET=your_api_secret_here
-BASE_URL=https://api.example.com
+GAMONO_KEY_GEN=your_api_key_here
+GAMONO_BASE_URL=https://gamono.api/v1/gifs
 ```
 
 ---
@@ -108,14 +113,6 @@ npm test
 ## ⚙️ Contribuições
 
 Este projeto é privado e contribuições externas não são permitidas no momento.
-
----
-
-## 🎨 Capturas de Tela
-
-<p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Preview+da+API" alt="Preview da API">
-</p>
 
 ---
 
