@@ -1,0 +1,18 @@
+{
+  "name": "gamonoapi",
+  "version": "1.0.0",
+  "description": "Uma API para buscar GIFs do Giphy.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["api", "giphy", "gifs", "express"],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
